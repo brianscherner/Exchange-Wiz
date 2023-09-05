@@ -12,35 +12,36 @@
       </pre>
       <form>
         <label for="usDollars">Enter an amount in US dollars:</label>
-        <input id="usDollars" type="number" name="usDollars">
+        <input id="usDollars" type="number" name="usDollars" min="0">
         <br>
         <label>
-          <input type="radio" class="radioButtons" name="currency" value="euro">
+          <input type="radio" name="currency" value="euro">
           Euro (EUR)
         </label>
         <br>
         <label>
-          <input type="radio" class="radioButtons" name="currency" value="yen">
+          <input type="radio" name="currency" value="yen">
           Japanese yen (JPY)
         </label>
         <br>
         <label>
-          <input type="radio" class="radioButtons" name="currency" value="franc">
+          <input type="radio" name="currency" value="franc">
           Swiss franc (CHF)
         </label>
         <br>
         <label>
-          <input type="radio" class="radioButtons" name="currency" value="australian">
+          <input type="radio" name="currency" value="australian">
           Australian Dollar (AUD)
         </label>
         <br>
         <label>
-          <input type="radio" class="radioButtons" name="currency" value="honkkong">
+          <input type="radio" name="currency" value="hongKong">
           Hong Kong dollar (HKD)
         </label>
         <br>
         <button type="submit" class="btn-success" id="exchangeRate">Convert Currency</button>
       </form>
     </div>
+    <p id="showCurrencyConversion"></p>
   </body>
 </html>
