@@ -7,13 +7,9 @@ async function getCurrencyConversionRates() {
   let response = await CurrencyService.getCurrencyConversionRates();
   console.log("Response: ", response);
   if (response[0].result === "success") {
-    return convertCurrencyAndDisplayInDom(response);
+    convertCurrencyAndDisplayInDom(response);
   }
 }
-
-// function printError(error) {
-//   document.querySelector("showCurrencyConversion").innerText = `There was an error accessing the currency data for ${error}: `;
-// }
 
 function convertCurrencyAndDisplayInDom(response) {
   const convertedEuro = document.querySelector("#usDollars").value * response[0].conversion_rates.EUR;
