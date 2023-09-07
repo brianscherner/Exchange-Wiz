@@ -4,23 +4,25 @@ import './css/styles.css';
 import CurrencyService from './services/currency-service.js';
 
 async function getCurrencyConversionRates() {
-  let response = await CurrencyService.getCurrencyConversionRates();
+  const response = await CurrencyService.getCurrencyConversionRates();
   console.log("Response: ", response);
-  if (response[0].result === "success") {
-    return convertCurrencyAndDisplayInDom(response);
+  if (response.result === "success") {
+    convertCurrencyAndDisplayInDom(response);
+  } else {
+    printError(response);
   }
 }
 
-// function printError(error) {
-//   document.querySelector("showCurrencyConversion").innerText = `There was an error accessing the currency data for ${error}: `;
-// }
+function printError(error, response) {
+  document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing the currency exchange data for ${response}: ${error}.`;
+}
 
 function convertCurrencyAndDisplayInDom(response) {
-  const convertedEuro = document.querySelector("#usDollars").value * response[0].conversion_rates.EUR;
-  const convertedJapaneseYen = document.querySelector("#usDollars").value * response[0].conversion_rates.JPY;
-  const convertedSwissFranc = document.querySelector("#usDollars").value * response[0].conversion_rates.CHF;
-  const convertedAustralianDollar = document.querySelector("#usDollars").value * response[0].conversion_rates.AUD;
-  const convertedHongKongDollar = document.querySelector("#usDollars").value * response[0].conversion_rates.HKD;
+  const convertedEuro = document.querySelector("#usDollars").value * response.conversion_rates.EUR;
+  const convertedJapaneseYen = document.querySelector("#usDollars").value * response.conversion_rates.JPY;
+  const convertedSwissFranc = document.querySelector("#usDollars").value * response.conversion_rates.CHF;
+  const convertedAustralianDollar = document.querySelector("#usDollars").value * response.conversion_rates.AUD;
+  const convertedHongKongDollar = document.querySelector("#usDollars").value * response.conversion_rates.HKD;
   const currencyType = document.querySelector("input[name='currency']:checked").value;
   let americanDollars = document.querySelector("#usDollars").value;
   if (currencyType === "euro") {
@@ -33,6 +35,8 @@ function convertCurrencyAndDisplayInDom(response) {
     document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedAustralianDollar} Australian Dollars.`;
   } else if (currencyType === "hongKong") {
     document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedHongKongDollar} Hong Kong Dollars.`;
+  } else {
+    document.querySelector("p#showConvertedCurrency").innerText = `Please enter an amount in ${americanDollars}.`;
   }
 }
 
