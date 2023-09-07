@@ -13,8 +13,8 @@ async function getCurrencyConversionRates() {
   }
 }
 
-function printError(error, response) {
-  document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing the currency exchange data for ${response}: ${error}.`;
+function printError(error) {
+  document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing currency exchange data: ${error}.`;
 }
 
 function convertCurrencyAndDisplayInDom(response) {
