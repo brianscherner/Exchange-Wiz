@@ -25,13 +25,10 @@ function convertCurrencyAndDisplayInDom(response) {
   const convertedPoundSterling = document.querySelector("#usDollars").value * response.conversion_rates.GBP;
   const convertedCanadianDollar = document.querySelector("#usDollars").value * response.conversion_rates.CAD;
   const convertedChineseRenminbi = document.querySelector("#usDollars").value * response.conversion_rates.CNY;
-  const convertedNewZealandDollar = document.querySelector("#usDollars").value *
-  response.conversion_rates.NZD;
+  const convertedNewZealandDollar = document.querySelector("#usDollars").value * response.conversion_rates.NZD;
   const convertedMexicanPeso = document.querySelector("#usDollars").value * response.conversion_rates.MXN;
-
   let currencyType = document.querySelector("input[name='currency']:checked").value;
   let americanDollars = document.querySelector("#usDollars").value;
-
   if (currencyType === "euro") {
     document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedEuro} Euros.`;
   } else if (currencyType === "yen") {
