@@ -32,6 +32,7 @@ Setup Instructions:
 * Select the green "Code" button, clone this repository to your desktop, and open it in VS Code.
 * Create a `.env` file and add it to your `.gitignore`.
 * Place your API key in your `.env` file and store it in a variable. Example: `API_KEY=a3f4rt56re67th987dd12cc3`.
+* **Make sure to commit your `.gitignore` file before moving on.**
 * Open a new terminal window, go to the root directory, and run the command `$ npm install` to install node_modules.
 * Run the command `$ npm run build` to bundle together JS files.
 * Enter the command `$ npm run start` to start a live development server.
