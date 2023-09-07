@@ -12,31 +12,61 @@
       </pre>
       <form>
         <label for="usDollars">Enter an amount in US dollars (USD):</label>
-        <input id="usDollars" type="number" name="usDollars" min="1">
+        <input id="usDollars" type="number" name="usDollars" min="1" step="0.01" placeholder="0.00" required>
         <br>
         <label>
-          <input type="radio" name="currency" value="euro">
+          <input type="radio" name="currency" value="euro" required>
           Euro (EUR)
         </label>
         <br>
         <label>
-          <input type="radio" name="currency" value="yen">
+          <input type="radio" name="currency" value="yen" required>
           Japanese yen (JPY)
         </label>
         <br>
         <label>
-          <input type="radio" name="currency" value="franc">
+          <input type="radio" name="currency" value="franc" required>
           Swiss franc (CHF)
         </label>
         <br>
         <label>
-          <input type="radio" name="currency" value="australian">
-          Australian Dollar (AUD)
+          <input type="radio" name="currency" value="australian" required>
+          Australian dollar (AUD)
         </label>
         <br>
         <label>
-          <input type="radio" name="currency" value="hongKong">
+          <input type="radio" name="currency" value="hongKong" required>
           Hong Kong dollar (HKD)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="pound" required>
+          Pound sterling (GBP)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="canadian" required>
+          Canadian dollar (CAD)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="chinese" required>
+          Chinese renminbi (CNY)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="newZealand" required>
+          New Zealand dollar (NZD)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="peso" required>
+          Mexican peso (MXN)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="currency" value="won" required>
+          North Korean won (KPW)
         </label>
         <br>
         <button type="submit" class="btn-success" id="exchangeRate">Convert Currency</button>

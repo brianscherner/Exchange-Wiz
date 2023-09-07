@@ -5,7 +5,6 @@ import CurrencyService from './services/currency-service.js';
 
 async function getCurrencyConversionRates() {
   const response = await CurrencyService.getCurrencyConversionRates();
-  console.log("Response: ", response);
   if (response.result === "success") {
     convertCurrencyAndDisplayInDom(response);
   } else {
@@ -23,20 +22,38 @@ function convertCurrencyAndDisplayInDom(response) {
   const convertedSwissFranc = document.querySelector("#usDollars").value * response.conversion_rates.CHF;
   const convertedAustralianDollar = document.querySelector("#usDollars").value * response.conversion_rates.AUD;
   const convertedHongKongDollar = document.querySelector("#usDollars").value * response.conversion_rates.HKD;
-  const currencyType = document.querySelector("input[name='currency']:checked").value;
+  const convertedPoundSterling = document.querySelector("#usDollars").value * response.conversion_rates.GBP;
+  const convertedCanadianDollar = document.querySelector("#usDollars").value * response.conversion_rates.CAD;
+  const convertedChineseRenminbi = document.querySelector("#usDollars").value * response.conversion_rates.CNY;
+  const convertedNewZealandDollar = document.querySelector("#usDollars").value *
+  response.conversion_rates.NZD;
+  const convertedMexicanPeso = document.querySelector("#usDollars").value * response.conversion_rates.MXN;
+
+  let currencyType = document.querySelector("input[name='currency']:checked").value;
   let americanDollars = document.querySelector("#usDollars").value;
+
   if (currencyType === "euro") {
-    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedEuro} Euros.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedEuro} Euros.`;
   } else if (currencyType === "yen") {
-    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedJapaneseYen} Japanese Yen.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedJapaneseYen} Japanese yen.`;
   } else if (currencyType === "franc") {
-    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedSwissFranc} Swiss Francs.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedSwissFranc} Swiss francs.`;
   } else if (currencyType === "australian") {
-    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedAustralianDollar} Australian Dollars.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedAustralianDollar} Australian dollars.`;
   } else if (currencyType === "hongKong") {
-    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US Dollars equals ${convertedHongKongDollar} Hong Kong Dollars.`;
-  } else {
-    document.querySelector("p#showConvertedCurrency").innerText = `Please enter an amount in ${americanDollars}.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedHongKongDollar} Hong Kong dollars.`;
+  } else if (currencyType === "pound") {
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedPoundSterling} Pounds sterling.`;
+  } else if (currencyType === "canadian") {
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedCanadianDollar} Canadian dollars.`;
+  } else if (currencyType === "chinese") {
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedChineseRenminbi} Chinese renminbi.`;
+  } else if (currencyType === "newZealand") {
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedNewZealandDollar} New Zealand dollars.`;
+  } else if (currencyType === "peso") {
+    document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedMexicanPeso} Mexican pesos.`;
+  } else if (currencyType === "won") {
+    document.querySelector("p#showConvertedCurrency").innerText = `This currency is not supported due to sanctions and lack of any international trade.`;
   }
 }
 
