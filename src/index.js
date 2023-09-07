@@ -50,7 +50,7 @@ function convertCurrencyAndDisplayInDom(response) {
   } else if (currencyType === "peso") {
     document.querySelector("p#showConvertedCurrency").innerText = `${americanDollars} US dollars equals ${convertedMexicanPeso} Mexican pesos.`;
   } else if (currencyType === "won") {
-    document.querySelector("p#showConvertedCurrency").innerText = `This currency is not supported due to sanctions and lack of any international trade.`;
+    document.querySelector("p#showConvertedCurrency").innerText = `This currency is not supported due to sanctions and lack of any international trade. Please select a different currency to convert!`;
   }
 }
 
