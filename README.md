@@ -1,8 +1,8 @@
-# Template Repository
+# Currency Exchanger
 
-#### Use this template repository for starting new projects. Update with new technologies and packages when necessary.
+#### An application that determines exchange rates for a number of currencies from throughout the world.
 
-#### By (Your Name Here)
+#### By Brian Scherner
 
 ## Technologies Used
 
@@ -12,21 +12,37 @@
 * JavaScript
 * Webpack
 * Node Package Manager
-* Jest
+* ExchangeRate-API
+* Git
 
 ## Description
 
+This application uses the ExchangeRate-API. It allows users to enter an amount in US dollars (USD), and then select another currency to view it's exchange rate after selecting "Convert Currency". The user will see the exchange rate after submitting the form. If a currency isn't supported by the ExchangeRate-API, the user will see a message explaining so.
+
 ## Setup/Installation Requirements
 
-* Select the green "Use this template" button and select "create a new repository".
-* In the terminal, go to your project folder and run the command `$ npm install` to install node_modules.
+Creating API Key:
+
+* Visit the [ExchangeRate-API](https://www.exchangerate-api.com/) site. Input your email address and click the "Get Free Key" button.
+* Create an account with your email, first name, and password. Agree to the terms of use and click "Get Started!".
+* You will then be able to view your API key, as well as how many API calls you can make for the current month.
+
+Setup Instructions:
+
+* Select the green "Code" button, clone this repository to your desktop, and open it in VS Code.
+* Create a `.env` file and add it to your `.gitignore`.
+* Place your API key in your `.env` file and store it in a variable. Example: `API_KEY=a3f4rt56re67th987dd12cc3`.
+* Open a new terminal window, go to the root directory, and run the command `$ npm install` to install node_modules.
 * Run the command `$ npm run build` to bundle together JS files.
 * Enter the command `$ npm run start` to start a live development server.
 * Enter the command `$ npm run lint` to check for errors.
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+Application is functioning as intended, although I plan to add more CSS styling to it later.
 
 ## License
+
+MIT
+
+Copyright(c) 2023 Brian Scherner
