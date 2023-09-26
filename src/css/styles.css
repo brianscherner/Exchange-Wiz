@@ -1,0 +1,38 @@
+.container {
+  color: #4dd88e;
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+p {
+  font-family: Helvetica;
+  font-weight: 600;
+}
+
+pre {
+  font-family: Helvetica;
+  font-size: medium;
+}
+
+body {
+  background-color: #303338;
+}
+
+input {
+  background-color: #ececec;
+  font-weight: 600;
+}
+
+button {
+  background-color: #4dd88e;
+  color: #303338;
+  font-weight: 600;
+}
+
+form {
+  font-family: Helvetica;
+  font-weight: 600;
+}
