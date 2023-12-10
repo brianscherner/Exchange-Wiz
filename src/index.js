@@ -29,7 +29,7 @@ function convertCurrencyAndDisplayInDom(response) {
     let convertedCurrency = americanDollars * conversionRate;
     convertedCurrencyArray.push(convertedCurrency + " " + conversionCode + "\n\n");
   });
-  document.querySelector("p#showConvertedCurrency").innerText = `Each three letter code represents a country's currency. \n\n $${americanDollars} USD is equal to ${convertedCurrencyArray}`;
+  document.querySelector("p#showConvertedCurrency").innerText = `Each three letter code represents a country's currency. \n\n $${americanDollars} USD is equal to ${convertedCurrencyArray.join("")}`;
 }
 
 function handleFormSubmission(event) {
