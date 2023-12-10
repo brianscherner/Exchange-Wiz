@@ -27,7 +27,7 @@ function convertCurrencyAndDisplayInDom(response) {
     let conversionRate = parseFloat(element.match(/[\d.]+/));
     let conversionCode = element.substring(0, 3);
     let convertedCurrency = americanDollars * conversionRate;
-    convertedCurrencyArray.push(convertedCurrency + " " + conversionCode + "\n\n");
+    convertedCurrencyArray.push(convertedCurrency.toFixed(4) + " " + conversionCode + "\n\n");
   });
   document.querySelector("p#showConvertedCurrency").innerText = `$${americanDollars} USD is equal to: \n\n ${convertedCurrencyArray.slice(1).join("")}`;
 }
