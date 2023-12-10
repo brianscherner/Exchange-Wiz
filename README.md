@@ -52,9 +52,15 @@ Copyright(c) 2023 Brian Scherner
 Increased functionality ideas:
 
 // Option 1: Single input to take code string from user and put in square bracket notation to access conversion rates.
+
 // API call option: Put getCurrencyConversionRates() in the addEventListener and call it once.
+
 // Get user input for single 3 digit code in handleFormSubmission
+
 // When user submits form, get code and use it.
+
 // Store getCurrencyConversionRates function in variable and use as argument in addEventListener for form.
+
 // Asynchronicity will need to factor into this approach.
-// Could use a loop to list every currency rate from the API.
+
+**Could use a loop to list every currency rate from the API. Save result in a variable, use document.querySelector for 'usDollars' and loop through the response object to display every currency code on screen.**
