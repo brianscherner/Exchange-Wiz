@@ -64,3 +64,5 @@ Increased functionality ideas:
 // Asynchronicity will need to factor into this approach.
 
 **Could use a loop to list every currency rate from the API. Save result in a variable, use document.querySelector for 'usDollars' and loop through the response object to display every currency code on screen.**
+
+**Make API call when page loads and display all country codes. Make it collapsible. Have form gather USD amount and a three letter code. Calculate USD amount by multiplying it by the code's value.**
