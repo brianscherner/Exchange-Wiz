@@ -12,12 +12,17 @@
         $10 USD equals 8.86 CHF (Swiss Francs).
       </pre>
       <p>Each three letter code represents a country's currency. Try it out!</p>
-      <form>
-        <label for="usDollars">Enter an amount in US dollars (USD):</label>
-        <input id="usDollars" type="number" name="usDollars" min="1" required>
-        <br>
-        <button type="submit" class="btn-success" id="exchangeRate">Convert Currency</button>
-      </form>
+      <div id="currencyConversionForm">
+        <form>
+          <label for="usDollars">Enter an amount in US dollars (USD):</label>
+          <input id="usDollars" type="number" name="usDollars" min="1" required>
+          <br>
+          <label for="currencyCode">Select a currency:</label>
+          <select id="currencyCode" name="currencyList"></select>
+          <br>
+          <button type="submit" class="btn-success" id="convertCurrency">Convert Currency</button>
+        </form>
+      </div>
       <br>
       <p id="showConvertedCurrency"></p>
     </div>
