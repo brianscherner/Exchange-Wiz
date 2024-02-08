@@ -10,7 +10,7 @@ async function getCurrencyConversionRates() {
   currencyServiceApiData = response;
   console.log(currencyServiceApiData);
   if (response.result === "success") {
-    storeCurrencyData();
+    convertCurrencyAndDisplayResult();
   } else {
     printError(response);
   }
@@ -20,9 +20,30 @@ function printError(error) {
   document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing currency exchange data: ${error}.`;
 }
 
-function storeCurrencyData() {
+function convertCurrencyAndDisplayResult() {
+  // Get the data from API response.
   let currencyConversionRates = currencyServiceApiData.conversion_rates;
   console.log(currencyConversionRates);
+
+  // Since the "conversion_rates" object has no indexes for any of the currency codes, give each conversion code an index.
+  const indexedCurrencyRatesArray = [];
+  // This gives each currency code an index.
+  for (const key in currencyConversionRates) {
+    // It also changes the data to display the currency code and its exchange rate as a string, and pushes each value into the new array
+    indexedCurrencyRatesArray.push(`${key}: ${currencyConversionRates[key]}`);
+  }
+
+  // Loop through each index in the array that contains the newly formatted currency codes
+  let extractedCurrencyCodeArray = [];
+  indexedCurrencyRatesArray.forEach(function(element) {
+    // since each code is always 3 letters, extract only the letters from the value at each index
+    let conversionCode = element.substring(0, 3);
+    // push the extracted 3 letter codes into the new array
+    extractedCurrencyCodeArray.push(conversionCode);
+  });
+  console.log(extractedCurrencyCodeArray);
+
+
 }
 
 window.addEventListener("load", function() {
