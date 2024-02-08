@@ -8,7 +8,6 @@ let currencyServiceApiData = null;
 async function getCurrencyConversionRates() {
   const response = await CurrencyService.getCurrencyConversionRates();
   currencyServiceApiData = response;
-  console.log(currencyServiceApiData);
   if (response.result === "success") {
     convertCurrencyAndDisplayResult();
   } else {
@@ -23,7 +22,6 @@ function printError(error) {
 function convertCurrencyAndDisplayResult() {
   // Get the data from API response.
   let currencyConversionRates = currencyServiceApiData.conversion_rates;
-  console.log(currencyConversionRates);
 
   // Since the "conversion_rates" object has no indexes for any of the currency codes, give each conversion code an index.
   const indexedCurrencyRatesArray = [];
@@ -41,33 +39,21 @@ function convertCurrencyAndDisplayResult() {
     // push the extracted 3 letter codes into the new array
     extractedCurrencyCodeArray.push(conversionCode);
   });
-  console.log(extractedCurrencyCodeArray);
 
-
+  // target the drop down list that will display all of the currency codes
+  let currencyCodeSelection = document.getElementById("currencyCodeSelection");
+  // loop through the array containing all of the 3 letter codes
+  for (let i = 1; i < extractedCurrencyCodeArray.length; i++) {
+    //for each code, create an element that will contain the value of each index from the array containing the currency codes
+    let currencyOption = extractedCurrencyCodeArray[i];
+    let currencyElement = document.createElement("option");
+    currencyElement.text = currencyOption;
+    currencyElement.value = currencyOption;
+    // append each element to the drop down list
+    currencyCodeSelection.appendChild(currencyElement);
+  }
 }
 
 window.addEventListener("load", function() {
   getCurrencyConversionRates();
-  // document.querySelector("form").addEventListener("submit", handleFormSubmission);
 });
-
-// function convertCurrencyAndDisplayInDom(response) {
-//   const americanDollars = document.querySelector("#usDollars").value;
-//   const responseArray = [];
-//   for (const key in response.conversion_rates) {
-//     responseArray.push(`${key}: ${response.conversion_rates[key]}`);
-//   }
-//   let convertedCurrencyArray = [];
-//   responseArray.forEach(function(element) {
-//     let conversionRate = parseFloat(element.match(/[\d.]+/));
-//     let conversionCode = element.substring(0, 3);
-//     let convertedCurrency = americanDollars * conversionRate;
-//     convertedCurrencyArray.push(convertedCurrency.toFixed(4) + " " + conversionCode + "\n\n");
-//   });
-//   document.querySelector("p#showConvertedCurrency").innerText = `$${americanDollars} USD is equal to: \n\n ${convertedCurrencyArray.slice(1).join("")}`;
-// }
-
-// function handleFormSubmission(event) {
-//   event.preventDefault();
-//   getCurrencyConversionRates();
-// }
