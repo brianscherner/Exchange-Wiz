@@ -22,7 +22,6 @@ function printError(error) {
 function convertCurrencyAndDisplayResult() {
   // Get the data from API response.
   let currencyConversionRates = currencyServiceApiData.conversion_rates;
-
   // Since the "conversion_rates" object has no indexes for any of the currency codes, give each conversion code an index.
   const indexedCurrencyRatesArray = [];
   // This gives each currency code an index.
@@ -30,16 +29,19 @@ function convertCurrencyAndDisplayResult() {
     // It also changes the data to display the currency code and its exchange rate as a string, and pushes each value into the new array
     indexedCurrencyRatesArray.push(`${key}: ${currencyConversionRates[key]}`);
   }
-
   // Loop through each index in the array that contains the newly formatted currency codes
   let extractedCurrencyCodeArray = [];
+  let exchangeRateValueArray = [];
   indexedCurrencyRatesArray.forEach(function(element) {
-    // since each code is always 3 letters, extract only the letters from the value at each index
+    // extract the decimal number from each index
+    let conversionCodeNumber = element.replace(/[^0-9.]+/g, "");
+    // extract the 3 letter code from each index
     let conversionCode = element.substring(0, 3);
-    // push the extracted 3 letter codes into the new array
+    // push the extracted decimal number into a new array
+    exchangeRateValueArray.push(conversionCodeNumber);
+    // push the extracted 3 letter codes into a new array
     extractedCurrencyCodeArray.push(conversionCode);
   });
-
   // target the drop down list that will display all of the currency codes
   let currencyCodeSelection = document.getElementById("currencyCodeSelection");
   // loop through the array containing all of the 3 letter codes
