@@ -5,22 +5,17 @@
   </head>
   <body>
     <div class="container">
-      <h1>Determine Exchange Rates For the US Dollar</h1>
+      <h1>Currency Exchanger</h1>
+      <h3>Determine Exchange Rates For the US Dollar</h3>
       <hr>
-      <p>To see exchange rates, please enter an amount in US dollars (USD). Then, select a currency from the drop down menu. After that, simply select "Convert Currency", and the amount of the selected currency in USD will be displayed below. For example:</p>
-      <pre>
-        $10 USD equals 8.86 CHF (Swiss Francs).
-      </pre>
-      <p>Each three letter code represents a country's currency. Try it out!</p>
+      <p>Please enter an amount in US dollars (USD), and choose a currency from the drop down menu. Then, click "Convert"!</p>
       <div id="currencyConversionForm">
         <form id="conversionForm">
-          <label for="usDollars">Enter an amount in US dollars (USD):</label>
-          <input id="usDollars" type="number" name="usDollars" min="1" required>
+          <input id="usDollars" type="number" name="usDollars" min="1" placeholder="Enter amount in USD" required>
           <br>
-          <label for="currencyCodeSelection">Select a currency:</label>
           <select id="currencyCodeSelection" name="currencyList"></select>
           <br>
-          <button type="submit" class="btn-success" id="convertCurrency">Convert Currency</button>
+          <button type="submit" class="btn-success" id="convertCurrency">Convert</button>
         </form>
       </div>
       <br>

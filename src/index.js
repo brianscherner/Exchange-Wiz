@@ -47,7 +47,7 @@ function calculateCurrencyConversion() {
   let usDollarValue = document.getElementById("usDollars").value;
   let selectedCurrencyValue = document.getElementById("currencyCodeSelection").value;
   let currencyConversionValue = (usDollarValue * selectedCurrencyValue).toFixed(4);
-  document.getElementById("showConvertedCurrency").innerText = `${currencyConversionValue}.`;
+  document.getElementById("showConvertedCurrency").innerText = `${usDollarValue} USD = ${currencyConversionValue}.`;
 }
 
 window.addEventListener("load", function() {
