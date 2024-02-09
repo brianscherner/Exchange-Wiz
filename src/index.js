@@ -6,7 +6,6 @@ import { currencyNames } from './services/currency-names.js';
 
 let currencyServiceApiData = null;
 const currencyNamesArray = currencyNames;
-console.log(currencyNamesArray);
 
 async function getCurrencyConversionRates() {
   const response = await CurrencyService.getCurrencyConversionRates();
@@ -23,25 +22,24 @@ function printError(error) {
 }
 
 function convertCurrencyAndDisplayResult() {
-  // Get the data from API response.
   let currencyConversionRates = currencyServiceApiData.conversion_rates;
-  console.log(currencyConversionRates);
 
   const currencyCodes = Object.keys(currencyConversionRates);
   currencyCodes.splice(128, 1);
-  console.log(currencyCodes);
 
   const currencyCodeValues = Object.values(currencyConversionRates);
   currencyCodeValues.splice(128, 1);
-  console.log(currencyCodeValues);
 
-  const currencies = Object.entries(currencyConversionRates);
-  currencies.splice(128, 1);
-  console.log(currencies);
+  let currencyCodeSelection = document.getElementById("currencyCodeSelection");
 
   currencyCodes.forEach((code, index) => {
     const name = currencyNamesArray[index];
-    console.log(code, name);
+    let currency = `${code} - ${name}`;
+    let currencyElement = document.createElement("option");
+    currencyElement.text = currency;
+    currencyElement.name = currency;
+    currencyElement.value = currencyCodeValues[index];
+    currencyCodeSelection.appendChild(currencyElement);
   });
 
 }
@@ -49,59 +47,3 @@ function convertCurrencyAndDisplayResult() {
 window.addEventListener("load", function() {
   getCurrencyConversionRates();
 });
-
-// Since the "conversion_rates" object has no indexes for any of the currency codes, give each conversion code an index.
-// const indexedCurrencyRatesArray = [];
-// // This gives each currency code an index.
-// for (const key in currencyConversionRates) {
-//   // It also changes the data to display the currency code and its exchange rate as a string, and pushes each value into the new array
-//   indexedCurrencyRatesArray.push(`${key}: ${currencyConversionRates[key]}`);
-// }
-// console.log(indexedCurrencyRatesArray);
-
-// Loop through each index in the array that contains the newly formatted currency codes
-// let extractedCurrencyCodeArray = [];
-// let exchangeRateValueArray = [];
-// indexedCurrencyRatesArray.forEach(function(element) {
-//   // extract the decimal number from each index
-//   let conversionCodeNumber = element.replace(/[^0-9.]+/g, "");
-//   // extract the 3 letter code from each index
-//   let conversionCode = element.substring(0, 3);
-//   // push the extracted decimal number into a new array
-//   exchangeRateValueArray.push(conversionCodeNumber);
-//   // push the extracted 3 letter codes into a new array
-//   extractedCurrencyCodeArray.push(conversionCode);
-// });
-// console.log(exchangeRateValueArray);
-// console.log(extractedCurrencyCodeArray);
-// exchangeRateValueArray.shift(1);
-// extractedCurrencyCodeArray.shift(1);
-// console.log(exchangeRateValueArray);
-// console.log(extractedCurrencyCodeArray);
-// console.log(currencyNamesArray);
-
-// target the drop down list that will display all of the currency codes
-// let currencyCodeSelection = document.getElementById("currencyCodeSelection");
-// loop through the array containing all of the 3 letter codes
-// extractedCurrencyCodeArray.forEach((code, index) => {
-//   const name = currencyNamesArray[index];
-//   console.log(code, name);
-// });
-
-// for (let i = 0; i < extractedCurrencyCodeArray.length; i++) {
-//   //for each code, create an element that will contain the value of each index from the array containing the currency codes
-//   let currencyCode = extractedCurrencyCodeArray[i];
-//   let currencyElement = document.createElement("option");
-//   currencyElement.text = currencyCode;
-//   currencyElement.value = currencyCode;
-//   // append each element to the drop down list
-//   currencyCodeSelection.appendChild(currencyElement);
-// }
-
-// for (let i = 0; i < currencyNamesArray.length; i++) {
-//   let currencyName = currencyNamesArray[i];
-//   console.log(currencyName);
-//   currencyElement.text = currencyName;
-//   console.log(currencyElement);
-//   currencyCodeSelection.appendChild(currencyElement);
-// }
