@@ -1,4 +1,5 @@
 export const currencyNames = [
+  "United States Dollar",
   "UAE Dirham",
   "Afghan Afghani",
   "Albanian Lek",
@@ -61,7 +62,7 @@ export const currencyNames = [
   "Hungarian Forint",
   "Indonesian Rupiah",
   "Israeli New Shekel",
-  "Manx Pound	Isle",
+  "Manx Pound",
   "Indian Rupee",
   "Iraqi Dinar",
   "Iranian Rial",
@@ -144,7 +145,7 @@ export const currencyNames = [
   "Tanzanian Shilling",
   "Ukrainian Hryvnia",
   "Ugandan Shilling",
-  "United States Dollar",
+  // "United States Dollar",
   "Uruguayan Peso",
   "Uzbekistani So'm",
   "Venezuelan Bolívar Soberano",
@@ -159,5 +160,5 @@ export const currencyNames = [
   "Yemeni Rial",
   "South African Rand",
   "Zambian Kwacha",
-  "Zimbabwean Dollar"
+  "Zimbabwean Dollar",
 ];
