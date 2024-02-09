@@ -39,15 +39,19 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
     currencyElement.text = currency;
     currencyElement.name = currency;
     currencyElement.value = currencyCodeValues[index];
+    currencyElement.id = `${currencyElement.text}`;
     currencyCodeSelection.appendChild(currencyElement);
   });
 }
 
 function calculateCurrencyConversion() {
+  let currencyCodeSelection = document.getElementById("currencyCodeSelection");
   let usDollarValue = document.getElementById("usDollars").value;
-  let selectedCurrencyValue = document.getElementById("currencyCodeSelection").value;
+  let selectedCurrencyValue = currencyCodeSelection.value;
+  let selectedCurrencyName = currencyCodeSelection.options[currencyCodeSelection.selectedIndex];
+  let selectedCurrencyId = selectedCurrencyName.id;
   let currencyConversionValue = (usDollarValue * selectedCurrencyValue).toFixed(4);
-  document.getElementById("showConvertedCurrency").innerText = `${usDollarValue} USD = ${currencyConversionValue}.`;
+  document.getElementById("showConvertedCurrency").innerText = `${usDollarValue} US Dollars = \n ${currencyConversionValue} ${selectedCurrencyId}`;
 }
 
 window.addEventListener("load", function() {
