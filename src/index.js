@@ -2,8 +2,11 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './services/currency-service.js';
+import { currencyNames } from './services/currency-names.js';
 
 let currencyServiceApiData = null;
+const currencyNamesArray = currencyNames;
+console.log(currencyNamesArray);
 
 async function getCurrencyConversionRates() {
   const response = await CurrencyService.getCurrencyConversionRates();
@@ -44,6 +47,8 @@ function convertCurrencyAndDisplayResult() {
     // push the extracted 3 letter codes into a new array
     extractedCurrencyCodeArray.push(conversionCode);
   });
+  console.log(exchangeRateValueArray);
+  console.log(extractedCurrencyCodeArray);
 
   // target the drop down list that will display all of the currency codes
   let currencyCodeSelection = document.getElementById("currencyCodeSelection");
