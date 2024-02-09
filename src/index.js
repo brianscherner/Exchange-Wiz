@@ -22,36 +22,36 @@ function printError(error) {
 }
 
 function getCurrencyDataAndAddCurrencyNamesToForm() {
-  let currencyConversionRates = currencyServiceApiData.conversion_rates;
+  let currencyExchangeRates = currencyServiceApiData.conversion_rates;
 
-  const currencyCodes = Object.keys(currencyConversionRates);
+  const currencyCodes = Object.keys(currencyExchangeRates);
   currencyCodes.splice(128, 1);
 
-  const currencyCodeValues = Object.values(currencyConversionRates);
+  const currencyCodeValues = Object.values(currencyExchangeRates);
   currencyCodeValues.splice(128, 1);
 
-  let currencyCodeSelection = document.getElementById("currencyCodeSelection");
+  let currencySelection = document.getElementById("currencySelection");
 
   currencyCodes.forEach((code, index) => {
     const name = currencyNamesArray[index];
-    let currency = `${code} - ${name}`;
+    let currency = `${name} - ${code}`;
     let currencyElement = document.createElement("option");
     currencyElement.text = currency;
     currencyElement.name = currency;
     currencyElement.value = currencyCodeValues[index];
     currencyElement.id = `${currencyElement.text}`;
-    currencyCodeSelection.appendChild(currencyElement);
+    currencySelection.appendChild(currencyElement);
   });
 }
 
 function calculateCurrencyConversion() {
-  let currencyCodeSelection = document.getElementById("currencyCodeSelection");
-  let usDollarValue = document.getElementById("usDollars").value;
-  let selectedCurrencyValue = currencyCodeSelection.value;
-  let selectedCurrencyName = currencyCodeSelection.options[currencyCodeSelection.selectedIndex];
+  let currencySelection = document.getElementById("currencySelection");
+  let usDollarAmount = document.getElementById("usDollars").value;
+  let selectedCurrencyValue = currencySelection.value;
+  let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id;
-  let currencyConversionValue = (usDollarValue * selectedCurrencyValue).toFixed(4);
-  document.getElementById("showConvertedCurrency").innerText = `${usDollarValue} US Dollars = \n ${currencyConversionValue} ${selectedCurrencyId}`;
+  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue).toFixed(4);
+  document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount} US Dollars = \n ${currencyConversionResult} ${selectedCurrencyId}`;
 }
 
 window.addEventListener("load", function() {
