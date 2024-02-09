@@ -11,7 +11,7 @@ async function getCurrencyConversionRates() {
   const response = await CurrencyService.getCurrencyConversionRates();
   currencyServiceApiData = response;
   if (response.result === "success") {
-    convertCurrencyAndDisplayResult();
+    getCurrencyDataAndAddCurrencyNamesToForm();
   } else {
     printError(response);
   }
@@ -21,7 +21,7 @@ function printError(error) {
   document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing currency exchange data: ${error}.`;
 }
 
-function convertCurrencyAndDisplayResult() {
+function getCurrencyDataAndAddCurrencyNamesToForm() {
   let currencyConversionRates = currencyServiceApiData.conversion_rates;
 
   const currencyCodes = Object.keys(currencyConversionRates);
@@ -41,9 +41,20 @@ function convertCurrencyAndDisplayResult() {
     currencyElement.value = currencyCodeValues[index];
     currencyCodeSelection.appendChild(currencyElement);
   });
+}
 
+function calculateCurrencyConversion() {
+  let usDollarValue = document.getElementById("usDollars").value;
+  let selectedCurrencyValue = document.getElementById("currencyCodeSelection").value;
+  let currencyConversionValue = (usDollarValue * selectedCurrencyValue).toFixed(4);
+  document.getElementById("showConvertedCurrency").innerText = `${currencyConversionValue}.`;
 }
 
 window.addEventListener("load", function() {
   getCurrencyConversionRates();
+  document.getElementById("conversionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("showConvertedCurrency").removeAttribute("class", "hidden");
+    calculateCurrencyConversion();
+  });
 });

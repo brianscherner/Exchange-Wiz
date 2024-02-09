@@ -36,3 +36,7 @@ form {
   font-family: Helvetica;
   font-weight: 600;
 }
+
+.hidden {
+  display: none;
+}
