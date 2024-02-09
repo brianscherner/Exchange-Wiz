@@ -28,11 +28,16 @@ function convertCurrencyAndDisplayResult() {
   console.log(currencyConversionRates);
 
   const currencyCodes = Object.keys(currencyConversionRates);
-  console.log(currencyCodes);
   currencyCodes.splice(128, 1);
   console.log(currencyCodes);
+
   const currencyCodeValues = Object.values(currencyConversionRates);
+  currencyCodeValues.splice(128, 1);
   console.log(currencyCodeValues);
+
+  const currencies = Object.entries(currencyConversionRates);
+  currencies.splice(128, 1);
+  console.log(currencies);
 
   currencyCodes.forEach((code, index) => {
     const name = currencyNamesArray[index];

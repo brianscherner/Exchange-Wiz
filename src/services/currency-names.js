@@ -145,7 +145,6 @@ export const currencyNames = [
   "Tanzanian Shilling",
   "Ukrainian Hryvnia",
   "Ugandan Shilling",
-  // "United States Dollar",
   "Uruguayan Peso",
   "Uzbekistani So'm",
   "Venezuelan Bolívar Soberano",
