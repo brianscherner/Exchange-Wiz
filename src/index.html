@@ -8,14 +8,18 @@
       <h1>Currency Exchanger</h1>
       <h3>Determine Exchange Rates For the US Dollar</h3>
       <hr>
-      <div id="currencyConversionForm">
-        <form id="conversionForm">
-          <input id="usDollars" type="number" class="form-select" name="usDollars" min="1" placeholder="Enter amount in USD" required>
-          <br>
-          <select id="currencySelection" name="currencyList" class="form-select"></select>
-          <br>
-          <button type="submit" class="form-control" id="convertCurrency">Convert</button>
-        </form>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div id="currencyConversionForm">
+            <form id="conversionForm">
+              <input id="usDollars" type="number" class="form-select" name="usDollars" min="1" placeholder="Enter amount in USD" required>
+              <br>
+              <select id="currencySelection" name="currencyList" class="form-select"></select>
+              <br>
+              <button type="submit" class="form-control" id="convertCurrency">Convert</button>
+            </form>
+          </div>
+        </div>
       </div>
       <br>
       <p id="showConvertedCurrency" class="hidden"></p>
