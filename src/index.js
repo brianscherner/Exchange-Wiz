@@ -46,12 +46,14 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
 
 function calculateCurrencyConversion() {
   let currencySelection = document.getElementById("currencySelection");
-  let usDollarAmount = document.getElementById("usDollars").value;
-  let selectedCurrencyValue = currencySelection.value;
+
+  let usDollarAmount = parseInt(document.getElementById("usDollars").value);
+  let selectedCurrencyValue = parseInt(currencySelection.value);
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id;
-  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue).toFixed(4);
-  document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount} US Dollars = \n ${currencyConversionResult} ${selectedCurrencyId}`;
+  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue).toLocaleString();
+
+  document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount.toLocaleString()} US Dollars = \n ${currencyConversionResult} ${selectedCurrencyId}`;
 }
 
 window.addEventListener("load", function() {
