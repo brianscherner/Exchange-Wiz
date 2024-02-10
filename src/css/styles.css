@@ -1,3 +1,7 @@
+body {
+  background-color: #303338;
+}
+
 .container {
   color: #4dd88e;
   text-align: center;
@@ -7,17 +11,27 @@
   text-align: justify center;
 }
 
-.form-control {
+#convertCurrency {
   width: 40rem;
   color: #303338;
   background-color: #4dd88e;
   font-weight: 900;
 }
 
+.form-control {
+  background-color: #ececec;
+  color: #303338;
+  font-weight: 900;
+  width: 40rem;
+  font-family: Helvetica;
+}
+
 .form-select {
+  background-color: #ececec;
   width: 40rem;
   color: #303338;
   font-weight: 900;
+  font-family: Helvetica;
 }
 
 h1 {
@@ -31,36 +45,11 @@ h3 {
   font-size: 2.5rem;
 }
 
+.hidden {
+  display: none;
+}
+
 p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 3rem;
-}
-
-pre {
-  font-family: Helvetica;
-  font-size: medium;
-}
-
-body {
-  background-color: #303338;
-}
-
-input {
-  background-color: #ececec;
-  font-weight: 600;
-}
-
-button {
-  background-color: #4dd88e;
-  color: #303338;
-  font-weight: 600;
-}
-
-form {
-  font-family: Helvetica;
-  font-weight: 600;
-}
-
-.hidden {
-  display: none;
 }
