@@ -1,5 +1,23 @@
 .container {
   color: #4dd88e;
+  text-align: center;
+}
+
+#currencyConversionForm {
+  text-align: justify center;
+}
+
+.form-control {
+  width: 10rem;
+  color: #303338;
+  background-color: #4dd88e;
+  font-weight: 900;
+}
+
+.form-select {
+  width: 40rem;
+  color: #303338;
+  font-weight: 900;
 }
 
 h1 {
