@@ -1,6 +1,6 @@
 # Currency Exchanger
 
-#### An application that determines exchange rates for a number of currencies from throughout the world.
+#### An application that can determine exchange rates for the US dollar for any currency in the world.
 
 #### By Brian Scherner
 
@@ -17,7 +17,7 @@
 
 ## Description
 
-This application uses the ExchangeRate-API. It allows users to enter an amount in US dollars (USD), and then select another currency to view it's exchange rate after selecting "Convert Currency". The user will see the exchange rate after submitting the form. If a currency isn't supported by the ExchangeRate-API, the user will see a message explaining so.
+This application uses the ExchangeRate-API, which contains 161 supported currencies and covers 99% of all UN recognized states and territories. The only currency that is excluded from the list of available currencies is the North Korean Won (KPW). This is due to sanctions and lack of international trade. This application allows users to enter an amount in US dollars (USD), and then select another currency from a drop down menu. Users then select "Convert", and the conversion will be shown below. 
 
 ## Setup/Installation Requirements
 
@@ -40,29 +40,15 @@ Setup Instructions:
 
 ## Known Bugs
 
-Application is functioning as intended, although I plan to add more CSS styling to it later.
+None
 
+## Further Exploration 
+
+* Update UI to use commas to make the currency conversion result more visually friendly.
+* Refactor project to allow a user to view conversion rates for any two selected currencies, if possible?
+* Add better CSS styling to application.
 ## License
 
 MIT
 
-Copyright(c) 2023 Brian Scherner
-
-
-Increased functionality ideas:
-
-// Option 1: Single input to take code string from user and put in square bracket notation to access conversion rates.
-
-// API call option: Put getCurrencyConversionRates() in the addEventListener and call it once.
-
-// Get user input for single 3 digit code in handleFormSubmission
-
-// When user submits form, get code and use it.
-
-// Store getCurrencyConversionRates function in variable and use as argument in addEventListener for form.
-
-// Asynchronicity will need to factor into this approach.
-
-**Could use a loop to list every currency rate from the API. Save result in a variable, use document.querySelector for 'usDollars' and loop through the response object to display every currency code on screen.**
-
-**Make API call when page loads and display all country codes. Make it collapsible. Have form gather USD amount and a three letter code. Calculate USD amount by multiplying it by the code's value.**
+Copyright(c) 2024 Brian Scherner
