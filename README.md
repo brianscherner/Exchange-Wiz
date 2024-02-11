@@ -40,11 +40,12 @@ Setup Instructions:
 
 ## Known Bugs
 
-None
+None.
 
 ## Further Exploration 
 
 * Update UI to add commas for long numbers to make the currency conversion result more visually friendly.
+* I don't like how the page looks when the page is resized to a certain size. Would like to fix.
 
 ## License
 
