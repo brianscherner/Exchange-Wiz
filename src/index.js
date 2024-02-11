@@ -34,7 +34,7 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
 
   currencyCodes.forEach((code, index) => {
     const name = currencyNamesArray[index];
-    let currency = `${name} - ${code}`;
+    let currency = `${name} (${code})`;
     let currencyElement = document.createElement("option");
     currencyElement.text = currency;
     currencyElement.name = currency;
@@ -42,6 +42,8 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
     currencyElement.id = `${currencyElement.text}`;
     currencySelection.appendChild(currencyElement);
   });
+
+  currencySelection.options[1].style.display = "none";
 }
 
 function calculateCurrencyConversion() {
