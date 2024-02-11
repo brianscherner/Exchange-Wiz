@@ -1,6 +1,6 @@
 # Currency Exchanger
 
-#### An application that can determine exchange rates for the US dollar for any currency in the world.
+#### An application that can determine exchange rates for the US dollar for all other currencies.
 
 #### By Brian Scherner
 
@@ -44,9 +44,9 @@ None
 
 ## Further Exploration 
 
-* Update UI to use commas to make the currency conversion result more visually friendly.
+* Update UI to add commas for long numbers to make the currency conversion result more visually friendly.
 * Refactor project to allow a user to view conversion rates for any two selected currencies, if possible?
-* Add better CSS styling to application.
+
 ## License
 
 MIT
