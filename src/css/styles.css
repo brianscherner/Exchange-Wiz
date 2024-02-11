@@ -7,10 +7,6 @@ body {
   text-align: center;
 }
 
-#currencyConversionForm {
-  text-align: justify center;
-}
-
 #convertCurrency {
   width: 40rem;
   color: #303338;
