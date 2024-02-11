@@ -49,7 +49,18 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
 function calculateCurrencyConversion() {
   let currencySelection = document.getElementById("currencySelection");
 
+  // trying to add commas to numbers greater than 3 digits //
   let usDollarAmount = document.getElementById("usDollars").value;
+  let splitUsDollarString = usDollarAmount.split('');
+
+  if (splitUsDollarString[0].length >= 5) {
+    splitUsDollarString[0] = splitUsDollarString[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+  }
+  if (splitUsDollarString[1] && splitUsDollarString[1].length >= 5) {
+    splitUsDollarString[1] = splitUsDollarString[1].replace(/(\d{3})/g, '$1 ');
+  }
+  splitUsDollarString.join('.');
+
   let selectedCurrencyValue = currencySelection.value;
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id;
