@@ -53,7 +53,7 @@ function calculateCurrencyConversion() {
   let selectedCurrencyValue = currencySelection.value;
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id;
-  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue);
+  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue).toFixed(4);
 
   document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount} US Dollars = \n ${currencyConversionResult} ${selectedCurrencyId}`;
 }
