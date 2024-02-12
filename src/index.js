@@ -50,23 +50,19 @@ function calculateCurrencyConversion() {
   let currencySelection = document.getElementById("currencySelection");
 
   // trying to add commas to numbers greater than 3 digits //
-  let usDollarAmount = document.getElementById("usDollars").value;
-  let splitUsDollarString = usDollarAmount.split('');
+  let usDollarAmount = parseFloat(document.getElementById("usDollars").value);
+  console.log(usDollarAmount);
 
-  if (splitUsDollarString[0].length >= 5) {
-    splitUsDollarString[0] = splitUsDollarString[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-  }
-  if (splitUsDollarString[1] && splitUsDollarString[1].length >= 5) {
-    splitUsDollarString[1] = splitUsDollarString[1].replace(/(\d{3})/g, '$1 ');
-  }
-  splitUsDollarString.join('.');
+  let selectedCurrencyValue = parseFloat(currencySelection.value);
+  console.log(selectedCurrencyValue);
 
-  let selectedCurrencyValue = currencySelection.value;
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id;
-  let currencyConversionResult = (usDollarAmount * selectedCurrencyValue).toFixed(4);
 
-  document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount} US Dollars = \n ${currencyConversionResult} ${selectedCurrencyId}`;
+  let currencyConversionResult = parseFloat((usDollarAmount * selectedCurrencyValue).toFixed(4));
+  console.log(currencyConversionResult);
+
+  document.getElementById("showConvertedCurrency").innerText = `${usDollarAmount.toLocaleString('en-US')} US Dollars = \n ${currencyConversionResult.toLocaleString('en-US')} ${selectedCurrencyId}`;
 }
 
 window.addEventListener("load", function() {
