@@ -8,7 +8,7 @@ body {
 }
 
 #convertCurrency {
-  width: 40rem;
+  width: 100%;
   color: #303338;
   background-color: #4dd88e;
   font-weight: 900;
@@ -18,13 +18,11 @@ body {
   background-color: #ececec;
   color: #303338;
   font-weight: 900;
-  width: 40rem;
   font-family: Helvetica;
 }
 
 .form-select {
   background-color: #ececec;
-  width: 40rem;
   color: #303338;
   font-weight: 900;
   font-family: Helvetica;
@@ -41,11 +39,14 @@ h3 {
   font-size: 2.5rem;
 }
 
-.hidden {
-  display: none;
-}
-
-p {
+#showConvertedCurrency {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2.5rem;
+  color: #ececec;
+}
+
+#showUsDollarAmount {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
