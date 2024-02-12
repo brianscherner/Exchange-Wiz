@@ -58,7 +58,7 @@ function calculateCurrencyConversion() {
 
   let currencyConversionResult = parseFloat((usDollarAmount * selectedCurrencyValue).toFixed(4));
 
-  document.getElementById("showUsDollarAmount").innerText = `${usDollarAmount.toLocaleString('en-US')} US Dollars = `;
+  document.getElementById("showUsDollarAmount").innerText = `${usDollarAmount.toLocaleString('en-US')} US Dollars \n = `;
   document.getElementById("showConvertedCurrency").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${selectedCurrencyId}`;
 }
 
