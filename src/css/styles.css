@@ -179,3 +179,62 @@ h1 {
     font-size: 1rem;
   }
 }
+
+@media only screen and (max-width: 430px) {
+  h1 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.75rem;
+  }
+
+  #convertCurrency {
+    font-size: 0.9rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.585rem;
+    line-height: 1.2;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.7rem;
+  }
+
+  #convertCurrency {
+    font-size: 0.8rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.25rem;
+  }
+
+}
+
+@media only screen and (max-width: 344px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.65rem;
+  }
+
+  #convertCurrency {
+    font-size: 0.8rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.25rem;
+  }
+
+}
