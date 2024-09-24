@@ -5,7 +5,7 @@ body {
 .container {
   color: #4dd88e;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 #convertCurrency {
@@ -50,4 +50,58 @@ h3 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2.5rem;
   font-weight: 500;
+}
+
+/* media queries for responsive design */
+
+/* For tablets (768px and below) */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 0.5rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 1rem;
+  }
+}
+
+/* For mobile devices (480px and below) */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    margin-top: 0.25rem;
+    padding: 1rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.875rem;
+  }
+
+  #convertCurrency {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
