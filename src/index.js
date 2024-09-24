@@ -8,6 +8,9 @@ let currencyServiceApiData = null;
 const currencyNamesArray = currencyNames;
 
 async function getCurrencyConversionRates() {
+  // awaits API response - if call is successful it obtains currency conversion rates and the names of each one
+
+  // if unsuccessful, returns an error
   const response = await CurrencyService.getCurrencyConversionRates();
   currencyServiceApiData = response;
   if (response.result === "success") {
@@ -17,21 +20,29 @@ async function getCurrencyConversionRates() {
   }
 }
 
+// function that prints error if API call fails
 function printError(error) {
   document.querySelector("p#showConvertedCurrency").innerText = `There was an error accessing currency exchange data: ${error}.`;
 }
 
 function getCurrencyDataAndAddCurrencyNamesToForm() {
+  // gets conversion rates from API
   let currencyExchangeRates = currencyServiceApiData.conversion_rates;
 
+  // extracts 3 digit currency code for each currency
   const currencyCodes = Object.keys(currencyExchangeRates);
   currencyCodes.splice(128, 1);
+  console.log(currencyCodes);
 
+  // extracts exchange rate for each currency
   const currencyCodeValues = Object.values(currencyExchangeRates);
   currencyCodeValues.splice(128, 1);
 
   let currencySelection = document.getElementById("currencySelection");
 
+  // loops through all currency codes and adds the name of each currency next to the 3 digit code
+
+  // dynamically appends each one to the dropdown menu
   currencyCodes.forEach((code, index) => {
     const name = currencyNamesArray[index];
     let currency = `${name} (${code})`;
@@ -47,18 +58,22 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
 }
 
 function calculateCurrencyConversion() {
+  // gets currency selection and entered value in USD
   let currencySelection = document.getElementById("currencySelection");
 
   let usDollarAmount = parseFloat(document.getElementById("usDollars").value);
 
   let selectedCurrencyValue = parseFloat(currencySelection.value);
 
+  // accesses currency name and code and splits code from the name
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
   let selectedCurrencyId = selectedCurrencyName.id.split('(');
   let isolatedCurrencyCode = selectedCurrencyId[1].slice(0, 3);
 
+  // calculates the currency conversion
   let currencyConversionResult = parseFloat((usDollarAmount * selectedCurrencyValue).toFixed(4));
 
+  // displays the result
   document.getElementById("showConvertedCurrency").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${isolatedCurrencyCode}`;
 }
 

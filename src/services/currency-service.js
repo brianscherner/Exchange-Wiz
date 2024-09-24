@@ -1,3 +1,5 @@
+// calls API and returns JSON response object
+
 export default class CurrencyService {
   static async getCurrencyConversionRates() {
     try {

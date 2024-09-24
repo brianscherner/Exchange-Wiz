@@ -1,3 +1,5 @@
+// array of all currencies supported by API
+
 export const currencyNames = [
   "United States Dollar",
   "UAE Dirham",
