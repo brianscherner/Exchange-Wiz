@@ -32,7 +32,6 @@ function getCurrencyDataAndAddCurrencyNamesToForm() {
   // extracts 3 digit currency code for each currency
   const currencyCodes = Object.keys(currencyExchangeRates);
   currencyCodes.splice(128, 1);
-  console.log(currencyCodes);
 
   // extracts exchange rate for each currency
   const currencyCodeValues = Object.values(currencyExchangeRates);
