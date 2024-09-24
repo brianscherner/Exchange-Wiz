@@ -59,7 +59,7 @@ function calculateCurrencyConversion() {
 
   let currencyConversionResult = parseFloat((usDollarAmount * selectedCurrencyValue).toFixed(4));
 
-  document.getElementById("showUsDollarAmount").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${isolatedCurrencyCode}`;
+  document.getElementById("showConvertedCurrency").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${isolatedCurrencyCode}`;
 }
 
 window.addEventListener("load", function() {

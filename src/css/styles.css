@@ -13,38 +13,27 @@ body {
   color: #303338;
   background-color: #4dd88e;
   font-weight: 900;
+  font-size: 1.25rem;
 }
 
-.form-control {
+.form-select, .form-control, option {
   background-color: #ececec;
   color: #303338;
-  font-weight: 900;
-  font-family: Helvetica;
-}
-
-.form-select {
-  background-color: #ececec;
-  color: #303338;
-  font-weight: 900;
-  font-family: Helvetica;
+  font-weight: 700;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.25rem;
 }
 
 h1 {
-  font-family: 'Courier New', Courier, monospace;
-  /* font-family: Poppins; */
-  font-weight: 900;
+  font-family: "Righteous", sans-serif;
+  font-weight: 300;
   font-size: 3rem;
 }
 
-#showConvertedCurrency {
+#showConvertedCurrency  {
   font-family: 'Courier New', Courier, monospace;
-  color: #ececec;
-}
-
-#showUsDollarAmount {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.1rem;
+  font-weight: 600;
 }
 
 /* media queries */
@@ -61,7 +50,7 @@ h1 {
   }
 
   #convertCurrency {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   #showConvertedCurrency, #showUsDollarAmount {
