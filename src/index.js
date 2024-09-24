@@ -54,12 +54,12 @@ function calculateCurrencyConversion() {
   let selectedCurrencyValue = parseFloat(currencySelection.value);
 
   let selectedCurrencyName = currencySelection.options[currencySelection.selectedIndex];
-  let selectedCurrencyId = selectedCurrencyName.id;
+  let selectedCurrencyId = selectedCurrencyName.id.split('(');
+  let isolatedCurrencyCode = selectedCurrencyId[1].slice(0, 3);
 
   let currencyConversionResult = parseFloat((usDollarAmount * selectedCurrencyValue).toFixed(4));
 
-  document.getElementById("showUsDollarAmount").innerText = `${usDollarAmount.toLocaleString('en-US')} US Dollars \n = `;
-  document.getElementById("showConvertedCurrency").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${selectedCurrencyId}`;
+  document.getElementById("showUsDollarAmount").innerText = `${currencyConversionResult.toLocaleString('en-US', { minimumFractionDigits: 4 })} ${isolatedCurrencyCode}`;
 }
 
 window.addEventListener("load", function() {

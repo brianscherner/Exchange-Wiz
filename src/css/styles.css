@@ -5,6 +5,7 @@ body {
 .container {
   color: #4dd88e;
   text-align: center;
+  margin-top: 2rem;
 }
 
 #convertCurrency {
