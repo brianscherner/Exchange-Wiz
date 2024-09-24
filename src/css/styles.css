@@ -1,3 +1,5 @@
+/* main app styling */
+
 body {
   background-color: #303338;
 }
@@ -13,7 +15,8 @@ body {
   color: #303338;
   background-color: #4dd88e;
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .form-select, .form-control, option {
@@ -38,98 +41,118 @@ h1 {
 
 /* media queries */
 
-/* For large desktops and below */
+/* for large monitors */
+
+@media only screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .form-control, .form-select, option {
+    font-size: 1.75rem;
+  }
+
+  #convertCurrency {
+    font-size: 1.75rem;
+  }
+
+  #showConvertedCurrency {
+    font-size: 2.5rem;
+  }
+}
 
 @media only screen and (max-width: 1326px) {
   h1 {
     font-size: 4rem;
   }
 
-  .form-control, .form-select {
-    font-size: 1.275rem;
+  .form-control, .form-select, option {
+    font-size: 1.75rem;
   }
 
   #convertCurrency {
-    font-size: 1.3rem;
+    font-size: 1.75rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 2rem;
+  #showConvertedCurrency {
+    font-size: 2.5rem;
   }
 }
 
+/* for desktops */
+
 @media only screen and (max-width: 1200px) {
   h1 {
-    font-size: 3.1rem;
+    font-size: 3.5rem;
   }
 
-  .form-control, .form-select {
-    font-size: 0.975rem;
+  .form-control, .form-select, option {
+    font-size: 1.5rem;
   }
 
   #convertCurrency {
-    font-size: 1.05rem;
+    font-size: 1.5rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.8rem;
+  #showConvertedCurrency {
+    font-size: 2.25rem;
   }
 }
 
 /* For tablets and small desktops */
 @media only screen and (max-width: 992px) {
   h1 {
-    font-size: 2.95rem;
+    font-size: 3.25rem;
   }
 
-  .form-control, .form-select {
-    font-size: 0.9rem;
+  .form-control, .form-select, option {
+    font-size: 1.375rem;
   }
 
   #convertCurrency {
-    font-size: 1rem;
+    font-size: 1.45rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.7rem;
+  #showConvertedCurrency {
+    font-size: 2rem;
   }
 }
 
-/* For tablets and below */
+/* For tablets */
 @media only screen and (max-width: 768px) {
   h1 {
-    font-size: 2.875rem;
+    font-size: 3rem;
   }
 
-  .form-control, .form-select {
-    font-size: 0.875rem;
+  .form-control, .form-select, option {
+    font-size: 1.25rem;
   }
 
   #convertCurrency {
-    font-size: 0.975rem;
+    font-size: 1.4rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.6rem;
+  #showConvertedCurrency {
+    font-size: 1.8rem;
   }
 }
 
-/* For small phones */
+/* For mobile phones */
 @media only screen and (max-width: 576px) {
   h1 {
     font-size: 2.75rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.5rem;
-  }
-
-  .form-control, .form-select {
-    font-size: 0.845rem;
+  .form-control, .form-select, option {
+    font-size: 1.15rem;
   }
 
   #convertCurrency {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
+  }
+
+  #showConvertedCurrency {
+    font-size: 1.8rem;
   }
 }
 
@@ -138,35 +161,34 @@ h1 {
     font-size: 2.5rem;
   }
 
-  .form-control, .form-select {
-    font-size: 0.765rem;
+  .form-control, .form-select, option {
+    font-size: 1rem;
   }
 
   #convertCurrency {
-    font-size: 0.875rem;
+    font-size: 1.15rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.4rem;
+  #showConvertedCurrency {
+    font-size: 1.6rem;
   }
 }
 
-/* For very small devices (480px and below) */
 @media only screen and (max-width: 480px) {
   h1 {
     font-size: 2.4rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 1.4rem;
-  }
-
-  .form-control, .form-select {
-    font-size: 0.85rem;
+  .form-control, .form-select, option {
+    font-size: 0.975rem;
   }
 
   #convertCurrency {
-    font-size: 0.925rem;
+    font-size: 1.075rem;
+  }
+
+  #showConvertedCurrency {
+    font-size: 1.5rem;
   }
 }
 
@@ -176,7 +198,7 @@ h1 {
     line-height: 1.2;
   }
 
-  .form-control, .form-select {
+  .form-control, .form-select, option {
     font-size: 0.75rem;
   }
 
@@ -184,7 +206,7 @@ h1 {
     font-size: 0.9rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
+  #showConvertedCurrency {
     font-size: 1.35rem;
   }
 }
@@ -195,7 +217,7 @@ h1 {
     line-height: 1.2;
   }
 
-  .form-control, .form-select {
+  .form-control, .form-select, option {
     font-size: 0.7rem;
   }
 
@@ -203,7 +225,7 @@ h1 {
     font-size: 0.8rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
+  #showConvertedCurrency {
     font-size: 1.25rem;
   }
 
@@ -215,7 +237,7 @@ h1 {
     line-height: 1.2;
   }
 
-  .form-control, .form-select {
+  .form-control, .form-select, option {
     font-size: 0.75rem;
   }
 
@@ -223,7 +245,7 @@ h1 {
     font-size: 0.8rem;
   }
 
-  #showConvertedCurrency, #showUsDollarAmount {
+  #showConvertedCurrency {
     font-size: 1.25rem;
   }
 
