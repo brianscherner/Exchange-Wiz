@@ -32,76 +32,150 @@ body {
 h1 {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 900;
-  font-size: 4rem;
-}
-
-h3 {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 #showConvertedCurrency {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2.5rem;
   color: #ececec;
 }
 
 #showUsDollarAmount {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
-/* media queries for responsive design */
+/* media queries */
 
-/* For tablets (768px and below) */
-@media only screen and (max-width: 768px) {
+/* For large desktops and below */
+
+@media only screen and (max-width: 1326px) {
   h1 {
     font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-
-  #showConvertedCurrency, #showUsDollarAmount {
-    font-size: 2rem;
-  }
-
-  .container {
-    margin-top: 0.5rem;
   }
 
   .form-control, .form-select {
     font-size: 1rem;
   }
-}
 
-/* For mobile devices (480px and below) */
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 1.75rem;
+  #convertCurrency {
+    font-size: 1.1rem;
   }
 
   #showConvertedCurrency, #showUsDollarAmount {
     font-size: 1.75rem;
   }
+}
 
-  .container {
-    margin-top: 0.25rem;
-    padding: 1rem;
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 2.75rem;
   }
 
   .form-control, .form-select {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 
   #convertCurrency {
-    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.8rem;
+  }
+}
+
+/* For tablets and small desktops */
+@media only screen and (max-width: 992px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 1rem;
+  }
+
+  #convertCurrency {
+    font-size: 1rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.7rem;
+  }
+}
+
+/* For tablets and below */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.95rem;
+  }
+
+  #convertCurrency {
+    font-size: 1rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.6rem;
+  }
+}
+
+/* For small phones */
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.5rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.95rem;
+  }
+
+  #convertCurrency {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 531px) {
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.85rem;
+  }
+
+  #convertCurrency {
+    font-size: 0.95rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.5rem;
+  }
+}
+
+/* For very small devices (480px and below) */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  #showConvertedCurrency, #showUsDollarAmount {
+    font-size: 1.4rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 0.85rem;
+  }
+
+  #convertCurrency {
     font-size: 1rem;
   }
 }
