@@ -1,4 +1,4 @@
-# Currency Exchanger
+# Exchange Wiz
 
 #### An application that determines exchange rates for the US dollar for any currency in the world.
 
@@ -17,7 +17,7 @@
 
 ## Description
 
-This application uses the ExchangeRate-API, which contains 161 supported currencies and covers 99% of all UN recognized states and territories. The only currency that is excluded from the list of available currencies is the North Korean Won (KPW). This is due to sanctions and lack of international trade. This application allows users to enter an amount in US dollars (USD), and then select another currency from a drop down menu. Users then select "Convert", and the conversion result will be shown below. 
+This application uses the ExchangeRate-API, which contains 161 supported currencies and covers 99% of all UN recognized states and territories. The only currency that is excluded from the list of available currencies is the North Korean Won (KPW). This is due to sanctions and lack of international trade. This application allows users to enter an amount in US dollars (USD), and then select another currency from a drop down menu. Users then select "Convert", and the conversion result will be shown below.
 
 ## Setup/Installation Requirements
 
@@ -42,7 +42,7 @@ Setup Instructions:
 
 None
 
-## Further Exploration 
+## Further Exploration
 
 * Figure out how to add currency symbols for every currency in the drop down menu.
 
