@@ -1,4 +1,4 @@
-# Currency Exchanger
+# Exchange Wiz
 
 #### An application that determines exchange rates for the US dollar for any currency in the world.
 
