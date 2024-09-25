@@ -1,8 +1,7 @@
-// calls API and returns JSON response object
+// makes frontend call to serverless Netlify function and returns JSON response object
 
-export const getCurrencyConversionRates = async () => {
-  const apiCall = "http://localhost:8888/.netlify/functions/api-call";
-  // const apiCall = "/.netlify/functions/api-call";
+export const callToServerlessFunction = async () => {
+  const apiCall = window.location.hostname === "localhost" ? "http://localhost:8888/.netlify/functions/api-call" : "/.netlify/functions/api-call";
   console.log('Frontend call: ', apiCall);
 
   try {

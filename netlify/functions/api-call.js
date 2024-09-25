@@ -1,13 +1,9 @@
-// const fetch = require('node-fetch');
-import('node-fetch');
-// require('dotenv').config();
+// makes call to API and returns JSON response object, which is then later called by function from front end in serverless-function-call.js
 
-exports.handler = async (event, context) => {
-  console.log("Fn invoked");
-  console.log("Event: ", event);
-  console.log("Context: ", context);
+import('node-fetch');
+
+exports.handler = async () => {
   const apiKey = process.env.API_KEY;
-  console.log("API key: ", apiKey);
   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
   try {
