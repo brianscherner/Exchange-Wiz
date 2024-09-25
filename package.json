@@ -30,6 +30,7 @@
     "webpack-dev-server": "5.1.0"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "node-fetch": "^3.3.2"
   }
 }
