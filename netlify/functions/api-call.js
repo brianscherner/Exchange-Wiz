@@ -4,8 +4,10 @@ import('node-fetch');
 
 exports.handler = async (event, context) => {
   console.log("Fn invoked");
-  console.log(event, context);
+  console.log("Event: ", event);
+  console.log("Context: ", context);
   const apiKey = process.env.API_KEY;
+  console.log("API key: ", apiKey);
   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
   try {
@@ -17,6 +19,10 @@ exports.handler = async (event, context) => {
     const apiData = await response.json();
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(apiData)
     };
   } catch (error) {

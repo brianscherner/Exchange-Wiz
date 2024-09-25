@@ -1,17 +1,17 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import CurrencyService from './services/currency-service.js';
+import { getCurrencyConversionRates } from './services/currency-service.js';
 import { currencyNames } from './services/currency-names.js';
 
 let currencyServiceApiData = null;
 const currencyNamesArray = currencyNames;
 
-async function getCurrencyConversionRates() {
+async function fetchCurrencyConversionRates() {
   // awaits API response - if call is successful it obtains currency conversion rates and the names of each one
 
   // if unsuccessful, returns an error
-  const response = await CurrencyService.getCurrencyConversionRates();
+  const response = await getCurrencyConversionRates();
   currencyServiceApiData = response;
   if (response.result === "success") {
     getCurrencyDataAndAddCurrencyNamesToForm();
@@ -77,7 +77,7 @@ function calculateCurrencyConversion() {
 }
 
 window.addEventListener("load", function() {
-  getCurrencyConversionRates();
+  fetchCurrencyConversionRates();
   document.getElementById("conversionForm").addEventListener("submit", function(event) {
     event.preventDefault();
     document.getElementById("showConvertedCurrency").removeAttribute("class", "hidden");
