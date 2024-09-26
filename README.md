@@ -14,6 +14,7 @@
 * Node Package Manager
 * ExchangeRate-API
 * Git
+* Netlify
 
 ## Description
 
