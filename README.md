@@ -14,10 +14,13 @@
 * Node Package Manager
 * ExchangeRate-API
 * Git
+* Netlify
 
 ## Description
 
 This application uses the ExchangeRate-API, which contains 161 supported currencies and covers 99% of all UN recognized states and territories. The only currency that is excluded from the list of available currencies is the North Korean Won (KPW). This is due to sanctions and lack of international trade. This application allows users to enter an amount in US dollars (USD), and then select another currency from a drop down menu. Users then select "Convert", and the conversion result will be shown below.
+
+View the live site [here](https://exchange-wiz.netlify.app/).
 
 ## Setup/Installation Requirements
 
